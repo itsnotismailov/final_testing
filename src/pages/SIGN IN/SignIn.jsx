@@ -26,7 +26,7 @@ const SignIn = () => {
 
   return (
     <div className='wrapper-signup'>
-        <div style={{ height: '385px' }} className='box'>
+        <div style={{ height: '395px' }} className='box'>
         <h1>Войти</h1>
         <form onSubmit={handleSubmit}>
                 <input required type='email' placeholder='Ваш e-mail' />

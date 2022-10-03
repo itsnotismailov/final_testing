@@ -26,7 +26,7 @@ const SignUp = () => {
 
   return (
     <div className='wrapper-signup'>
-     <div style={{ height: '450px' }} className='box'>
+     <div style={{ height: '460px' }} className='box'>
         <h1>Регистрация</h1>
         <form onSubmit={handleSubmit}>
             <input required type='text' placeholder='Вашe Имя' />
