@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 
-const Routes = () => {
+const MyRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
@@ -12,4 +12,4 @@ const Routes = () => {
     );
 };
 
-export default Routes;
+export default MyRoutes;
