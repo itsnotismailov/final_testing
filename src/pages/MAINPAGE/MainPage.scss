@@ -2,7 +2,13 @@
     @media screen and (max-width: 900px) {
       @content;
     }
-  }
+}
+
+@mixin phone {
+    @media screen and (max-width: 655px) {
+      @content;
+    }
+}
 
 
 
@@ -52,6 +58,9 @@
 
                     @include tablet {
                         display: block !important;
+                        color: rgba(204, 168, 138, 1);
+                        border-radius: 0px;
+                        margin-top: 20px;
                     }
                 }
             }
@@ -84,6 +93,11 @@
                     border-radius: 0px;
 
                 }
+                .uah {
+                    @include phone {
+                        display: none;
+                    }
+                }
             }
             .fourth-block {
                 display: flex;
@@ -93,9 +107,12 @@
                 img {
                     width: 25px;
                     height: 25px;
+                    cursor: pointer;
                 }
             }
         }
+
+
         .after-navbar {
             text-align: center;
             margin-top: 329px;
