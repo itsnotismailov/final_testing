@@ -17,25 +17,27 @@ const MainPage = () => {
         <div className='first-container'>
           <nav>
             <div className='first-block'>
+            <div className='hamburger' >
+                <Hamburger />
+              </div>
               <Link>New</Link>
               <Link>КАТАЛОГ</Link>
               <Link>О НАС</Link>
-              <div className='hamburger' >
-                <Hamburger />
-              </div>
             </div>
             <div className='second-block'>
-                <img src={Yanki} alt=''/>
+                <h1 className='h1'>YANKI</h1>
             </div>
             <div className='third-block'>
-                <p>RU</p>
-                <img src={Vector} alt=''/>
+              <div className='language'>
+                  <p>RU</p>
+                  <img src={Vector} alt=''/>
+              </div>
                 <p className='uah'>UAH</p>
-                <img style={{ left: '100px' }} src={Vector} alt=''/>
+                <img className='uah' style={{ left: '100px' }} src={Vector} alt=''/>
             </div>
             <div className='fourth-block'>
-                <img src={Search} alt='' />
-                <img onClick={() => signOut(auth)} src={User} alt='' />
+                <img className='disappear' src={Search} alt='' />
+                <img className='disappear' onClick={() => signOut(auth)} src={User} alt='' />
                 <img src={Love} alt='' />
                 <img src={Cart} alt='' />
             </div>
