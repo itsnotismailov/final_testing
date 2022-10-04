@@ -14,7 +14,6 @@ import Hamburger from 'hamburger-react';
 const MainPage = () => {
   return (
     <div className='wrapper-all'>
-        {/* <button onClick={() => signOut(auth)}>ВЫЙТИ</button> */}
         <div className='first-container'>
           <nav>
             <div className='first-block'>
@@ -31,12 +30,12 @@ const MainPage = () => {
             <div className='third-block'>
                 <p>RU</p>
                 <img src={Vector} alt=''/>
-                <p>UAH</p>
+                <p className='uah'>UAH</p>
                 <img style={{ left: '100px' }} src={Vector} alt=''/>
             </div>
             <div className='fourth-block'>
                 <img src={Search} alt='' />
-                <img src={User} alt='' />
+                <img onClick={() => signOut(auth)} src={User} alt='' />
                 <img src={Love} alt='' />
                 <img src={Cart} alt='' />
             </div>
