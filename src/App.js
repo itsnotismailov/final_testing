@@ -1,10 +1,10 @@
-import SignUp from './pages/SIGN UP/SignUp';
+import SignUp from './PAGES/SIGN UP/SignUp';
 import "./App.scss"
-import SignIn from './pages/SIGN IN/SignIn'
+import SignIn from './PAGES/SIGN IN/SignIn'
 import { Navigate, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MAINPAGE/MainPage'
+import MainPage from './PAGES/MAINPAGE/MainPage'
 import { useContext } from 'react';
-import { AuthContext } from './context/AuthContext'
+import { AuthContext } from './CONTEXT/AuthContext'
 
 function App() {
   const {currentUser} = useContext(AuthContext)
