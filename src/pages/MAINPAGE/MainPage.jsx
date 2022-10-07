@@ -3,21 +3,31 @@ import './MainPage.scss'
 import { Link } from 'react-router-dom';
 import Navbar from '../../COMPONENTS/NAVBAR/Navbar';
 import axios from 'axios';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation, EffectFade } from 'swiper';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+import { useMediaQuery } from 'react-responsive';
+import Footer from '../../COMPONENTS/FOOTER/Footer';
 
 
 const MainPage = () => {
 
   const [data, setData] = useState([])
 
-useEffect(() => {
-  const options = {
-    method: 'GET',
-    url: 'https://kara-balta.p.rapidapi.com/products',
-    headers: {
-      'X-RapidAPI-Key': '3a51998120msh0c0766059662c27p13690cjsn79a06260df4d',
-      'X-RapidAPI-Host': 'kara-balta.p.rapidapi.com'
-    }
-  };
+  const bigScreen = useMediaQuery({ query: '(max-width: 1171px)' })
+
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      url: 'https://kara-balta.p.rapidapi.com/products',
+      headers: {
+        'X-RapidAPI-Key': '3a51998120msh0c0766059662c27p13690cjsn79a06260df4d',
+        'X-RapidAPI-Host': 'kara-balta.p.rapidapi.com'
+      }
+    };
+  
   axios.request(options).then(function (response) {
     console.log(response.data);
     setData(response.data)
@@ -40,9 +50,45 @@ useEffect(() => {
           </div>
         </div>
         <div className='second-container'>
-          {data.map(item => (
-            <div key={item.id}>{item.title}</div>
-          ))}
+             <h1>Категории</h1>
+            <div className='swiper'>
+              <Swiper
+              modules={[Navigation, EffectFade]}
+              navigation
+              effect
+              speed={800}
+              slidesPerView={bigScreen ? 2 : 4}
+              className='swiper-slide'
+              >
+                  {data.map((item) => (
+                  <SwiperSlide className='swiper-center'>
+                    <img src={item.imgs[0].img} alt=''/>
+                    <div>
+                      <h3>{item.title}</h3>
+                    </div>
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
+            </div>
+        </div>
+
+        <div className='third-container'>
+          <h1>Узнайте первым о новинках</h1>
+          <div className='subscription'>
+             <form>
+             <input type='email' placeholder='Ваш e-mail'/>
+                <button onClick={click => {
+                  if(click) {
+                    alert('Вы Успешно Подписаны!')
+                  }
+                }}>ПОДПИСАТЬСЯ</button>
+             </form>
+              <p>Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих персональных данных и ознакомлен(а) с условиями конфиденциальности.</p>
+          </div>
+        </div>
+
+        <div className='footer'>
+          <Footer />
         </div>
     </div>
   )

@@ -20,7 +20,7 @@ const Navbar = () => {
              <div onClick={(e) => setIsOpen(!isOpen)}  className='hamburger' >
                 <Hamburger />
               </div>
-                <Link>New</Link>
+                <Link>NEW</Link>
                 <Link>КАТАЛОГ</Link>
                 <Link>О НАС</Link>
             </div>
