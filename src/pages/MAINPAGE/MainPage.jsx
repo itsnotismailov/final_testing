@@ -75,14 +75,12 @@ const MainPage = () => {
         <div className='third-container'>
           <h1>Узнайте первым о новинках</h1>
           <div className='subscription'>
-             <form>
              <input type='email' placeholder='Ваш e-mail'/>
                 <button onClick={click => {
                   if(click) {
                     alert('Вы Успешно Подписаны!')
                   }
                 }}>ПОДПИСАТЬСЯ</button>
-             </form>
               <p>Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих персональных данных и ознакомлен(а) с условиями конфиденциальности.</p>
           </div>
         </div>
