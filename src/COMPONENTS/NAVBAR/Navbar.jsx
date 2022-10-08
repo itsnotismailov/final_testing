@@ -21,7 +21,7 @@ const Navbar = () => {
                 <Hamburger />
               </div>
                 <Link>NEW</Link>
-                <Link>КАТАЛОГ</Link>
+                <Link to='/catalog'>КАТАЛОГ</Link>
                 <Link>О НАС</Link>
             </div>
             {isOpen && (

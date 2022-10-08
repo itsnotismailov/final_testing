@@ -1,6 +1,7 @@
 footer {
     display: flex;
     margin: auto;
+    align-items: center;
     margin-top: 100px;
     gap: 100px;
     text-align: center;
@@ -17,8 +18,9 @@ footer {
     .first-column {
         display: flex;
         flex-direction: column;
-        text-align: left;
+        text-align: left !important;
         position: relative;
+        margin-bottom: 25px;
         img {
             display: none;
         }
@@ -26,7 +28,8 @@ footer {
     .second-column {
         display: flex;
         flex-direction: column;
-        text-align: left;
+        text-align: left !important;
+        position: relative;
         img {
             display: none;
         }
@@ -34,7 +37,9 @@ footer {
     .third-column {
         display: flex;
         flex-direction: column;
-        text-align: left;
+        flex-wrap: wrap;
+        text-align: left !important;
+        position: relative;
         img {
             display: none;
         }
@@ -94,7 +99,7 @@ h1 {
                 position: absolute;
                 width: 18px;
                 display: block;
-                right: 0;
+                right: -115px;
                 top: 55px;
                 cursor: pointer;
             }
@@ -108,7 +113,7 @@ h1 {
                 position: absolute;
                 width: 18px;
                 display: block;
-                right: 0;
+                right: -115px;
                 top: 55px;
                 cursor: pointer;
             }
@@ -119,7 +124,7 @@ h1 {
                 position: absolute;
                 width: 18px;
                 display: block;
-                right: 0;
+                right: -115px;
                 top: 55px;
                 cursor: pointer;
             }
@@ -200,6 +205,27 @@ h1 {
         border: 0.3px solid #252525;
         position: relative;
     }
+
+    .third-column {
+        img {
+            right: -99px !important;
+        }
+       }
+
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+    .rotat {
+        transform: rotate(180deg);
+        right: -100px !important;
+        position: absolute;
+    }
+    .rota {
+        transform: rotate(180deg);
+        left: 270px !important;
+        position: absolute;
+    }
 }
 @media(max-width: 345px) {
     .line {
@@ -209,13 +235,36 @@ h1 {
         border: 0.3px solid #252525;
         position: relative;
     }
-}
-.rotate {
-    transform: rotate(180deg);
-}
-.rotat {
-    transform: rotate(180deg);
-}
-.rota {
-    transform: rotate(180deg);
+    footer {
+       .first-column {
+        img {
+            right: -62px;
+        }
+       }
+       .second-column {
+        img {
+            right: -62px;
+        }
+       }
+       .third-column {
+        img {
+            right: -47px !important;
+        }
+       }
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+    .rotat {
+        transform: rotate(180deg);
+        right: -49px !important;
+        position: absolute;
+    }
+    .rota {
+        transform: rotate(180deg);
+        left: 220px !important;
+        position: absolute;
+    }
+
 }

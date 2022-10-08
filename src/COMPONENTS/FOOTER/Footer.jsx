@@ -51,7 +51,7 @@ const Footer = () => {
 
 
   return (
-    <div>
+    <div className='footer'>
         <footer>
           <div className='first-column'>
             <div onClick={change}>

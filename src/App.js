@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import MainPage from './PAGES/MAINPAGE/MainPage'
 import { useContext } from 'react';
 import { AuthContext } from './CONTEXT/AuthContext'
+import Catalog from './PAGES/CATALOG/Catalog';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -24,6 +25,9 @@ function App() {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/' element={<ProtectedRoute>
             <MainPage />
+          </ProtectedRoute>} />
+          <Route path='/catalog' element={<ProtectedRoute>
+            <Catalog />
           </ProtectedRoute>} />
       </Routes>
     </div>
