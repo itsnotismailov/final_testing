@@ -1,0 +1,290 @@
+@mixin tablet {
+    @media screen and (max-width: 980px) {
+      @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 655px) {
+      @content;
+    }
+}
+
+@mixin smaller {
+    @media screen and (max-width: 620px) {
+      @content;
+    }
+}
+
+@mixin tiny {
+    @media screen and (max-width: 400px) {
+      @content;
+    }
+}
+@mixin Little {
+    @media screen and (max-width: 375px) {
+      @content;
+    }
+}
+@mixin extraLittle {
+    @media screen and (max-width: 360px) {
+        @content;
+    }
+}
+
+
+body{
+    background-color: #E5E5E5;
+    font-size: 16px;
+}
+.wrapper{
+    max-width: 1440px;
+    min-width: 300px;
+    background-color:  #FFFFFF;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.container{
+    position: relative;
+    width: 1140px;
+    max-width: 100%;
+    left: 150px;
+}
+.bread{
+    position: relative;
+    top: 38px;
+    right: 11px;
+
+    a{
+        text-decoration: none;
+        padding: 11px;
+        color: #252525;
+    }
+    a:hover{
+        font-weight: 500;
+    }
+}
+
+.content{
+    position: relative;
+    top: 60px;
+    height: 592px;
+
+    h3{
+        font-weight: 300;
+        font-size: 20px;
+    }
+    a{
+        position: relative;
+        display: block;
+        margin-top: 10px;
+        width: 250px;
+        margin-left: 47px;
+        right: 47px;
+
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 19px;
+        text-decoration: none;
+
+        color: #252525;
+    }
+    .telegram2{
+        position: relative;
+        width: 18px;
+        height: 18px;
+        top: -28px;
+        left: -20px;
+    }
+    
+    .inst1{
+        width: 18px;
+        height: 18px;
+    }
+    
+
+
+    .info{
+        margin-top: 30px;
+
+        @include smaller{
+            width: 350px;
+            
+        }
+    }
+    
+    p{  
+        margin-top: 10px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+.cards{
+    display: flex;
+    margin-top: -80px;
+    margin-left: 280px;
+    gap: 130px;
+
+
+    // @include tablet{
+    //     gap: 50px;
+    // }
+
+    @include smaller{
+        width: 375px !important;
+        left: -15px !important;
+        position: relative;
+     
+    .add{
+        position: relative;
+        left: -390px;
+        top: 210px
+
+    }   
+    }
+    @include tablet{
+        .add1{
+            position: relative;
+            top: 210px;
+            left: -390px ;
+        }
+        .add2{
+            position: relative;
+            top: 200px;
+            left: -775px ;
+        }
+    }
+
+    img{
+        position: relative;
+        margin-left: 68px;
+    }
+    p{
+        position: relative;
+        right: 30px;
+        width: 165px;
+        height: 140px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 30px;
+    }
+    .add{
+        position: relative;
+        right: 15px;
+        width: 165px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 66px;
+        margin-left: 30px;
+        margin-top: -95px;
+
+    }
+    .add1{
+        position: relative;
+        right: -10px;
+        width: 165px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 4px;
+        margin-left: 30px;
+        margin-top: -95px;
+    }
+    .add2{
+        position: relative;
+        right: -6px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        margin-left: 30px;
+        margin-top: -95px;
+    }
+
+}
+.contact {
+    width: 600px;
+    height: 380px;
+    text-align: center;
+
+    h6 {
+        width: 600px;
+        height: 42px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 23px;
+        color: #252525;
+        margin-top: 50px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding-left: 540px;
+        padding-top: 40px;
+
+        input {
+        width: 600px;
+        height: 50px;
+        padding-left: 20px;
+        text-align: center;
+        border: 0.5px solid #8d8d8d;
+
+        &::placeholder {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 200;
+            font-size: 16px;
+            line-height: 19px;
+            color: rgba(37, 37, 37, 0.5);
+        }
+        }
+        button {
+            width: 600px;
+            height: 50px;
+            background: #E0BEA2;
+            border: none;
+
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+
+        }
+    }
+    
+}
+
+.exchange{
+    @include smaller{
+        position: relative;
+        left: -130px;
+    }
+    @include tablet{
+        position: relative;
+        left: -125px;
+    }
+}
+.footer{
+    @include smaller{
+        display: none;
+    }
+
+}
