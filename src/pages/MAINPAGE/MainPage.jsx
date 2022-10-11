@@ -1,9 +1,8 @@
 import React from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from "../../Firebase";
 import './MainPage.scss'
 import { Link } from 'react-router-dom';
 import Navbar from '../../COMPONENTS/NAVBAR/Navbar';
+import Catalog from '../CATAOLOG/Catalog';
 
 const MainPage = () => {
   return (
@@ -15,6 +14,8 @@ const MainPage = () => {
             <div></div>
             <Link>Смотреть новинки</Link>
           </div>
+        </div>
+        <div className='second container'>
         </div>
     </div>
   )

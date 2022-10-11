@@ -11,6 +11,11 @@ import { auth } from '../../Firebase'
 import './Navbar.scss'
 import { useState } from "react";
 
+const NavBar = () => {
+  const [color, setColor] = useState(true)
+} 
+
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -21,7 +26,7 @@ const Navbar = () => {
                 <Hamburger />
               </div>
                 <Link>New</Link>
-                <Link>КАТАЛОГ</Link>
+                <Link to='/Catalog'>КАТАЛОГ</Link>
                 <Link>О НАС</Link>
             </div>
             {isOpen && (

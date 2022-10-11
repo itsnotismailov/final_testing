@@ -29,7 +29,7 @@
 
 
 
-.wrapper-all {
+.main {
     max-width: 1440px;
     min-width: 300px;
     background-color: bisque;
@@ -38,10 +38,10 @@
     flex-direction: column;
     flex-wrap: wrap;
 
-    .first-container {
+    .sidebar {
         height: 900px;
         background-color: aqua;
-        background: url('../../ASSETS/backround.svg');
+        // background: url('../../ASSETS/backround.svg');
         @include phone {
             background: url("../../ASSETS//single.svg") !important;
             background-size: cover !important;
@@ -95,4 +95,3 @@
     }
 
 }
-
