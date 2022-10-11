@@ -27,6 +27,9 @@ function App() {
         <Route path='/' element={<ProtectedRoute>
             <MainPage />
           </ProtectedRoute>} />
+          <Route path='/catalog' element={<ProtectedRoute>
+            <Catalog />
+          </ProtectedRoute>} />
       </Routes>
     </div>
   );

@@ -9,3 +9,26 @@
 button {
     cursor: pointer;
 }
+
+.swiper-button-next {
+    background-image: url('./ASSETS//slider.svg');
+}
+.swiper-button-prev {
+    background-image: url('./ASSETS//left.svg');
+    transform: rotateY(180deg);
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+.footer {
+    margin: auto !important;
+}
