@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../COMPONENTS/NAVBAR/Navbar';
 import Footer from '../../COMPONENTS/FOOTER/Footer'
 import { useMediaQuery } from 'react-responsive';
-import Swiper, { EffectFade, Navigation } from 'swiper';
-import Swip
+import  { EffectFade, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from 'axios';
 
 const MainPage = () => {
