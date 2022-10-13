@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Footer from '../../COMPONENTS/FOOTER/Footer'
-import Navbar from '../../COMPONENTS/NAVBAR/Navbar'
 import './ProductPage.scss'
 import switcher from '../../ASSETS/switcher.svg'
 import axios from 'axios'
@@ -12,14 +11,24 @@ import d from '../../ASSETS/d.jpg'
 import f from '../../ASSETS/f.jpg'
 import SelectSize from '../../COMPONENTS/SelectSize'
 import vector from '../../ASSETS/vectorGrey.svg'
+import { AuthContext } from '../../CONTEXT/AuthContext'
+import liked from '../../ASSETS/liked.svg'
 
 const ProductPage = ({ handleClick }) => {
   
+  const [toggle, setToggle] = useState(false)
+  const navigate = useNavigate()
+  const {products} = useContext(AuthContext)
   const [open, setOpen] = useState(true)
   let down = open ? 'reverse' : null
   const { id } = useParams()
   const [data, setData] = useState()
   console.log("ID", data);
+
+  const liking = () => {
+    setToggle(toggle => !toggle)
+  }
+  let is = toggle ? liked : liked
 
  
 
@@ -41,12 +50,15 @@ const ProductPage = ({ handleClick }) => {
         console.error(error);
     });
     }, [])
-
+    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
   
 
   return (
     <div className='productpage'>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
@@ -112,6 +124,27 @@ const ProductPage = ({ handleClick }) => {
                     </div>}
                 </div>
             </div>
+        </div>
+        <h1 className='youlike'>Вам может понравиться</h1>
+        <div className='productss'>
+                  {products.slice(1, 3).map(item => (
+                    <a href={item.id} className='product'>
+                       <div className='img'>
+                          <img src={item.imgs[0].imgBig} alt=''/>
+                          <img onClick={liking} className='like' src={is} alt=''/>
+                       </div>
+                       <div className='information'>
+                          <h4>{item.title}</h4>
+                          <h3>{item.price} грн</h3>
+                          <h5>{item.sizes[0].size} {item.sizes[1].size} {item.sizes[2].size}</h5>
+                          <div className='colors'>
+                              <div style={{ backgroundColor: `${item.colors[0].name}` }} className='a'></div>
+                              <div style={{ backgroundColor: `${item.colors[1].name}` }} className='b'></div>
+                              <div style={{ backgroundColor: `${item.colors[2].name}` }} className='c'></div>
+                          </div>
+                       </div>
+                    </a>
+            ))}
         </div>
         <Footer />
     </div>
