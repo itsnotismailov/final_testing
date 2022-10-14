@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className='fourth-block'>
                 <img className='disappear' src={catalog ? searchBlack : productPage ? searchBlack : order ? searchBlack : Search} alt='' />
                 <img className='disappear' onClick={() => signOut(auth)} src={catalog ? userYellow : productPage ? userYellow : order ? userYellow : User} alt='' />
-                <img src={catalog ? loveYellow : productPage ? loveYellow : order ? loveYellow : Love} alt='' />
+                <img onClick={() => navigate("/favorites")} src={catalog ? loveYellow : productPage ? loveYellow : order ? loveYellow : Love} alt='' />
                 <img onClick={() => navigate("/order")} src={catalog ? cartYellow : productPage ? cartYellow : order ? cartYellow : Cart} alt='' />
             </div>
         </nav>

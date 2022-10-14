@@ -12,6 +12,7 @@ import d from '../../ASSETS/d.jpg'
 import f from '../../ASSETS/f.jpg'
 import SelectSize from '../../COMPONENTS/SelectSize'
 import vector from '../../ASSETS/vectorGrey.svg'
+import Favorites from '../FAVORITES/Favorites'
 
 const ProductPage = ({ handleClick }) => {
   
@@ -21,7 +22,6 @@ const ProductPage = ({ handleClick }) => {
   const [data, setData] = useState()
   console.log("ID", data);
 
- 
 
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const ProductPage = ({ handleClick }) => {
                     </div>
                     <div className='buttons'>
                         <button onClick={() => handleClick(data)} className='a'>В Корзину</button>
-                        <button className='b'>В Избранное</button>
+                        <button } className='b'>В Избранное</button>
                     </div>
                 </div>
                 <div className='details'>

@@ -5,9 +5,10 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import MainPage from './PAGES/MAINPAGE/MainPage'
 import { useContext, useState } from 'react';
 import { AuthContext } from './CONTEXT/AuthContext';
-import Catalog from './pages/CATALOG/Catalog';
+import Catalog from './PAGES/CATALOG/Catalog';
 import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
 import Order from './PAGES/ORDER/Order';
+import Favorites from './PAGES/FAVORITES/Favorites';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
+        <Route path='/favorites' element={<Favorites />} />
         <Route path='/' element={<ProtectedRoute>
             <MainPage />
           </ProtectedRoute>} />
@@ -37,7 +39,7 @@ function App() {
           </ProtectedRoute>} />
           <Route path='/catalog/:id' element={<ProtectedRoute>
             <ProductPage handleClick={handleClick} />
-          </ProtectedRoute>} />
+            </ProtectedRoute>} />
           <Route path='/order' element={<ProtectedRoute><Order cart={cart}  />
           </ProtectedRoute>} />
       </Routes>
