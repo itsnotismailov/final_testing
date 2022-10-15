@@ -4,19 +4,12 @@ import SignIn from './PAGES/SIGN IN/SignIn'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainPage from './PAGES/MAINPAGE/MainPage'
 import { useContext, useState } from 'react';
-<<<<<<< HEAD
 import { AuthContext } from './CONTEXT/AuthContext';
 import Catalog from './PAGES/CATALOG/Catalog';
 import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
 import Order from './PAGES/ORDER/Order';
 import Favorites from './PAGES/FAVORITES/Favorites';
-=======
-import { AuthContext } from './CONTEXT/AuthContext'
-import Catalog from './PAGES/CATALOG/Catalog';
-import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
-import Order from './PAGES/ORDER/Order';
 import Navbar from './COMPONENTS/NAVBAR/Navbar';
->>>>>>> ac495de145cf56170ecb70f4ea0174c1d1748371
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -60,13 +53,8 @@ function App() {
           </ProtectedRoute>} />
           <Route path='/catalog/:id' element={<ProtectedRoute>
             <ProductPage handleClick={handleClick} />
-<<<<<<< HEAD
             </ProtectedRoute>} />
           <Route path='/order' element={<ProtectedRoute><Order cart={cart}  />
-=======
-          </ProtectedRoute>} />
-          <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} size={cart.length} setCart={setCart}  />
->>>>>>> ac495de145cf56170ecb70f4ea0174c1d1748371
           </ProtectedRoute>} />
       </Routes>
     </div>

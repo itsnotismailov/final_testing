@@ -57,8 +57,9 @@ const ProductPage = ({ handleClick }) => {
   
 
   return (
+    
     <div className='productpage'>
-        {/* <Navbar />` */}
+        {/* <Navbar /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
@@ -84,9 +85,9 @@ const ProductPage = ({ handleClick }) => {
                     <h3>{data?.title}</h3>
                     <h4>{data?.price} грн</h4>
                     <div className='colors'>
-                        <div style={{ backgroundColor: ${data?.colors[0]?.name} }}></div>
-                        <div style={{ backgroundColor: ${data?.colors[1]?.name} }}></div>
-                        <div style={{ backgroundColor: ${data?.colors[2]?.name} }}></div>
+                        <div style={{ backgroundColor: `${data?.colors[0]?.name}` }}></div>
+                        <div style={{ backgroundColor: `${data?.colors[1]?.name}` }}></div>
+                        <div style={{ backgroundColor: `${data?.colors[2]?.name}` }}></div>
                     </div>
                     <h5>{data?.colors[2]?.colorDeckr}</h5>
                 </div>
@@ -105,10 +106,10 @@ const ProductPage = ({ handleClick }) => {
                         <h3 className='clickable' onClick={() => setOpen(open => !open)}>Состав и уход</h3>
                     </div>
                     <hr />
-                    <img onClick={() => setOpen(open => !open)} className={vectorGrey ${down}} src={vector} alt=''/>
+                    <img onClick={() => setOpen(open => !open)} className={`${down}`} src={vector} alt=''/>
                     {open && 
                     <div className='care'>
-                        <div className='consistsof'>``
+                        <div className='consistsof'>
                         <h4>{data?.description[0]?.p}</h4>
                             <h4>{data?.description[1]?.p}</h4>
                             <h4>{data?.description[2]?.p}</h4>
@@ -138,9 +139,9 @@ const ProductPage = ({ handleClick }) => {
                           <h3>{item.price} грн</h3>
                           <h5>{item.sizes[0].size} {item.sizes[1].size} {item.sizes[2].size}</h5>
                           <div className='colors'>
-                              <div style={{ backgroundColor: ${item.colors[0].name} }} className='a'></div>
-                              <div style={{ backgroundColor: ${item.colors[1].name} }} className='b'></div>
-                              <div style={{ backgroundColor: ${item.colors[2].name} }} className='c'></div>
+                              <div style={{ backgroundColor: `${item.colors[0].name}` }} className='a'></div>
+                              <div style={{ backgroundColor: `${item.colors[1].name}` }} className='b'></div>
+                              <div style={{ backgroundColor: `${item.colors[2].name}` }} className='c'></div>
                           </div>
                        </div>
                     </a>
