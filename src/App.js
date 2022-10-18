@@ -26,6 +26,7 @@ function App() {
   const handleClick = (data) => {
     cart.push(data);
     setCart([...cart])
+    const [like,setLikes]
   }
 
   const handleChange = (item, d) => {
