@@ -14,7 +14,7 @@ import vector from '../../ASSETS/vectorGrey.svg'
 import { AuthContext } from '../../CONTEXT/AuthContext'
 import liked from '../../ASSETS/liked.svg'
 
-const ProductPage = ({ handleClick }) => {
+const ProductPage = ({ handleClick, handleFavourite }) => {
   
   const [toggle, setToggle] = useState(false)
   const navigate = useNavigate()
@@ -59,7 +59,6 @@ const ProductPage = ({ handleClick }) => {
   return (
     
     <div className='productpage'>
-        {/* <Navbar /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
@@ -97,7 +96,7 @@ const ProductPage = ({ handleClick }) => {
                     </div>
                     <div className='buttons'>
                         <button onClick={() => handleClick(data)} className='a'>В Корзину</button>
-                        <button className='b'>В Избранное</button>
+                        <button className='b' onClick={() => handleFavourite(data)}>В Избранное</button>
                     </div>
                 </div>
                 <div className='details'>
@@ -129,7 +128,7 @@ const ProductPage = ({ handleClick }) => {
         <h1 className='youlike'>Вам может понравиться</h1>
         <div className='productss'>
                   {products.slice(1, 3).map(item => (
-                    <a href={item.id} className='product'>
+                    <a style={{ textDecoration: 'none' }} href={item.id} className='product'>
                        <div className='img'>
                           <img src={item.imgs[0].imgBig} alt=''/>
                           <img onClick={liking} className='like' src={is} alt=''/>

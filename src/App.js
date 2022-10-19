@@ -13,6 +13,7 @@ import Navbar from './COMPONENTS/NAVBAR/Navbar';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
+  const [search, setSearch] = useState('')
  
   const ProtectedRoute = ({children}) => {
     if(!currentUser) {
@@ -22,12 +23,23 @@ function App() {
   }
 
   const [cart, setCart] = useState([])
+  const [favourite, setFavourite] = useState([])
 
   const handleClick = (data) => {
     cart.push(data);
     setCart([...cart])
-    const [like,setLikes]
+    const ind = cart.indexOf(item);
+    const arr = cart;
+    arr[ind].amount += d;
+
+    if(arr[ind].amount === 0) arr[ind].amount = 1
+    setCart([...arr])
   }
+  const handleFavourite = (data) => {
+    favourite.push(data);
+    setFavourite([...favourite])
+  }
+  
 
   const handleChange = (item, d) => {
     const ind = cart.indexOf(item);
