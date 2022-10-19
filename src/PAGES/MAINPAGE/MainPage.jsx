@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 import Footer from '../../COMPONENTS/FOOTER/Footer';
 
 
-const MainPage = () => {
+const MainPage = ({ size, sizes }) => {
 
   const [data, setData] = useState([])
   const navigate = useNavigate()
@@ -43,7 +43,6 @@ const MainPage = () => {
   return (
     <div className='wrapper-all'>
         <div className='first-container'>
-        <Navbar />
           <div className='after-navbar'>
             <h1>Новая Коллекция</h1>
             <div></div>
@@ -75,15 +74,11 @@ const MainPage = () => {
 
         <div className='third-container'>
           <h1>Узнайте первым о новинках</h1>
-          <div className='subscription'>
-             <input type='email' placeholder='Ваш e-mail'/>
-                <button onClick={click => {
-                  if(click) {
-                    alert('Вы Успешно Подписаны!')
-                  }
-                }}>ПОДПИСАТЬСЯ</button>
+          <form className='subscription'>
+             <input required type='email' placeholder='Ваш e-mail'/>
+                <button type='submit' onClick={() => alert("ВЫ УСПЕШНО ПОДПИСАНЫ 😎")}>ПОДПИСАТЬСЯ</button>
               <p>Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих персональных данных и ознакомлен(а) с условиями конфиденциальности.</p>
-          </div>
+          </form>
         </div>
 
         <div className='footer'>
